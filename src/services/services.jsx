@@ -1,5 +1,5 @@
+import { title } from 'framer-motion/client';
 import React from 'react';
-
 const servicesData = [
     {
         id: 1,
@@ -25,6 +25,21 @@ const servicesData = [
         id: 5,
         title: 'Online Ordering',
         description: 'Order your food online through our user-friendly website and skip the queue.',
+    },
+    {
+        id: 6,
+        title: 'Loyalty Program',
+        description: 'Join our loyalty program and earn points for every purchase.Redeem points for free meals,discounts,and exclusive offers.'
+    },
+    {
+        id: 7,
+        title: 'Private Dining',
+        description: 'Host your next special event in our private dining room.We can cater to any size group and offer customized menus.'
+    },
+    {
+        id: 8,
+        title: 'Gift Cards',
+        description: 'Giving the gift of delicious food with our gift cards.Available in any denomination,perfect for any occasion. '
     },
 ];
 
