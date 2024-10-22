@@ -78,7 +78,7 @@ import { motion, sync, useCycle } from "framer-motion";
 import MenuList from "./menuLIst";
 import { useDimensions } from "./usedimension";
 import NavAnimation from "./navbaranimation";
-
+import { FaUser } from "react-icons/fa";
 const sidebar = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
@@ -89,7 +89,7 @@ const sidebar = {
     }
   }),
   closed: {
-    clipPath: "circle(30px at 40px 40px)",
+    clipPath: "circle(80px at 10px 10px)",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -100,18 +100,22 @@ const sidebar = {
 };
 
  const Navbar = () => {
-  const [isOpen, toggleOpen] = useCycle(true, false);
+  const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
 
   return (
+    
     <motion.nav
       initial={false}
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
+    
     >
-      <motion.div className="background fixed" variants={sidebar} />
+      <motion.div className="background fixed z-10" variants={sidebar} > 
+      </motion.div>
+      
       <MenuList />
       <NavAnimation toggle={() => toggleOpen()} />
     </motion.nav>

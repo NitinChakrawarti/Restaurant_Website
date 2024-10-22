@@ -45,7 +45,7 @@ const servicesData = [
 
 const Services = () => {
     return (
-        <div className="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+        <div className="max-w-4xl mx-auto mt-10 p-6  rounded-lg shadow-md  lg:ml-[28vmax]">
             <h2 className="text-3xl font-bold text-center mb-6 underline underline-offset-4 decoration-[#FF5722] ">Our Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {servicesData.map((service) => (

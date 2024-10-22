@@ -1,12 +1,14 @@
 import * as React from "react";
+import { useEffect, useState, useContext } from "react";
 import { motion } from "framer-motion";
 import MenuItem from "./menuItems"; // Ensure the correct import path
 import { MdDinnerDining } from "react-icons/md";
-import { FaSignInAlt } from "react-icons/fa";
+import { FaSignInAlt, FaUser } from "react-icons/fa";
 import { MdFeedback } from "react-icons/md";
 import { MdBorderColor } from "react-icons/md";
 import { MdOutlineFoodBank } from "react-icons/md";
-// Animation variants for Framer Motion
+import { path } from "framer-motion/client";
+import { userName } from '../context/signupcontext';
 
 const variants = {
   open: {
@@ -17,22 +19,38 @@ const variants = {
   },
 };
 
+const MenuList = () => {
 
-const MenuList = () => (
-  <motion.ul variants={variants}>
-    {itemIds.map((item, index) => (
-      <MenuItem item={item} key={index} />
-    ))}
-  </motion.ul>
-);
+  const [bookvalue, setBookvalue] = useState(0);
+  const [usernameLS, setUsernameLS] = useState("Sign in");
+  const issignedin = useContext(userName);
+
+  useEffect(() => {
+    const bookvalue = localStorage.getItem("cardValue");
+    const usernameLS = localStorage.getItem("username");
+    if (usernameLS) {
+      setUsernameLS(usernameLS);
+    }
+    setBookvalue(bookvalue);
+  }, [issignedin.name]);
+  const itemIds = [
+    { path: "/", icon: <FaUser />, name: usernameLS },
+    { name: "Home", path: "/home", icon: <MdOutlineFoodBank /> },
+    { name: "Services", path: "/services", icon: <MdDinnerDining /> },
+    { name: "Write about us", path: "/feedback", icon: <MdFeedback /> },
+    { name: "Bookings", path: "/booking", icon: <MdBorderColor />, bookvalue: bookvalue }
+  ];
+
+  return (
+    <motion.ul variants={variants} className="z-10">
+
+      {itemIds.map((item, index) => (
+        <MenuItem item={item} key={index} />
+      ))}
+    </motion.ul>
+  )
 
 
-const itemIds = [
-  { name: "Signup", path: "/signin", icon: <FaSignInAlt /> },
-  { name: "Home", path: "/", icon: <MdOutlineFoodBank /> },
-  { name: "Services", path: "/services", icon: <MdDinnerDining /> },
-  { name: "Write about us", path: "/feedback", icon: <MdFeedback /> },
-  { name: "Bookings", path: "/booking", icon: <MdBorderColor /> },
-];
+};
 
 export default MenuList;

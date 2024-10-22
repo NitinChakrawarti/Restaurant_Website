@@ -23,7 +23,7 @@ nav {
     left: 0;
     bottom: 0;
     width: 300px;
-    background: #bd0808;
+    background: #5bd267f0;
   }
   
   button {
@@ -34,12 +34,11 @@ nav {
     align-items: center;
     cursor: pointer;
     position: fixed;
-    top: 18px;
-    left: 28px;
-    width: 50px;
-    height: 50px;
     border-radius: 50%;
     background: transparent;
+  }
+  #buttonnav {
+   padding: 30px;
   }
   
   ul,
@@ -92,3 +91,6 @@ nav {
     cursor: pointer;
   }
   
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+}

@@ -12,7 +12,7 @@ const Path = props => (
 );
 
  const NavAnimation = ({ toggle }) => (
-  <button onClick={toggle}>
+  <button onClick={toggle} id="buttonnav" className="z-10">
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         variants={{
