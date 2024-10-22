@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Services from './../services/services';
 import TopDishes from './topdishes';
 import Ourmenu from './ourmenu';
-
+import Bookingcard from './bookingcard';
 const Home = () => {
   return (
     <>
@@ -32,6 +32,7 @@ const Home = () => {
       </div>
       <TopDishes />
       <Ourmenu />
+      <Bookingcard />
     </>
   )
 }
