@@ -42,7 +42,7 @@ const MenuList = () => {
   ];
 
   return (
-    <motion.ul variants={variants} className="z-10">
+    <motion.ul variants={variants} className="z-50">
 
       {itemIds.map((item, index) => (
         <MenuItem item={item} key={index} />

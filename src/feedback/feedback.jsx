@@ -18,7 +18,7 @@ const Feedback = () => {
     };
 
     return (
-        <div className="max-w-md mx-auto mt-10 p-6 pb-20 bg-white rounded-lg ml-[2vmax] sm:ml-[16vmax] md:ml-[24vmax] lg:ml-[40vmax] ">
+        <div className="max-w-md mx-auto mt-10 p-6 pb-20 bg-white rounded-lg ml-[2vmax] sm:ml-[16vmax] md:ml-[24vmax] lg:ml-[40vmax] mb-10 ">
             <h2 className="text-3xl font-bold text-center mb-8 underline underline-offset-8 decoration-[#4CAF50]">Feedback</h2>
             {feedbackSubmitted ? (
                 <motion.div
@@ -75,7 +75,7 @@ const Feedback = () => {
                     <div className="flex items-center justify-center">
                         <motion.button
                             type="submit"
-                            className="px-2 bg-[#4CAF50] text-white py-2 rounded-md hover:bg-[#FF7043] transition duration-200 -z-0"
+                            className="px-2 bg-[#4CAF50] text-white py-2 rounded-md hover:bg-[#FF7043] transition relative duration-200 -z-0"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
