@@ -65,8 +65,8 @@ const BookingCard = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-4 bg-[#cdffcd] min-h-screen">
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 ">
+    <div className="flex flex-col items-center p-4 mt-10 mb-10 bg-[#cdffcd] min-h-screen">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {bookingOptions.map((option) => (
           <div
             key={option.id}
@@ -80,20 +80,20 @@ const BookingCard = () => {
               <p className="text-gray-600">Max {option.maxGuests} guests</p>
             </div>
             {showDetails === option.id && (
-              <div className="mt-1 text-gray-700">
+              <div className="mt-1 text-gray-700 flex-grow">
                 <p className="p-2">{option.description}</p>
                 <p className="p-2 font-semibold">Offers: {option.offers}</p>
               </div>
             )}
             <button
-              className="mt-20 py-20 px-20 text-blue-600" 
+              className="mt-10 py-24 px-20 text-blue-600"
               onClick={() => handleCardClick(option.id)}
             >
-              {showDetails === option.id ? 'Read Less' : 'Read More'}
+              {showDetails === option.id ? '' : 'Read More'}
             </button>
             {showDetails === option.id && (
               <button 
-                className="mt-24 mb-15 py-2 px-5 bg-blue-600 text-white rounded" 
+                className="mt-4 py-4 bg-blue-600 text-white rounded" 
                 onClick={(e) => { 
                   e.stopPropagation(); 
                   bookTable(option.id); 
@@ -108,15 +108,46 @@ const BookingCard = () => {
     </div>
   );
 };
+export default BookingCard 
+        
 
-export default BookingCard
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 // import React, { useState } from 'react';
-// import { FaUtensils, FaUser , FaCoffee } from 'react-icons/fa';
+// import { FaUtensils, FaUser , FaCoffee, FaCocktail, FaBirthdayCake, FaWineGlass } from 'react-icons/fa';
 
 // // Booking options 
 // const bookingOptions = [
@@ -144,6 +175,30 @@ export default BookingCard
 //     description: 'Take a break with your friends over coffee.',
 //     offers: 'Buy 2 get 1 free on all drinks!',
 //   },
+//   {
+//     id: 4,
+//     title: 'Cocktail Hour',
+//     maxGuests: 10,
+//     icon: <FaCocktail />,
+//     description: 'Enjoy a lively cocktail hour with a maximum of 10 guests.',
+//     offers: 'Special cocktail menu and 15% off on group bookings!',
+//   },
+//   {
+//     id: 5,
+//     title: 'Birthday Celebration',
+//     maxGuests: 20,
+//     icon: <FaBirthdayCake />,
+//     description: 'Celebrate your special day with up to 20 guests.',
+//     offers: 'Complimentary cake and decorations for birthday parties!',
+//   },
+//   {
+//     id: 6,
+//     title: 'Wine Tasting',
+//     maxGuests: 12,
+//     icon: <FaWineGlass />,
+//     description: 'Join us for a delightful wine tasting experience for up to 12 guests.',
+//     offers: 'Exclusive discounts on wine purchases and complimentary snacks!',
+//   },
 // ];
 
 // const BookingCard = () => {
@@ -158,7 +213,7 @@ export default BookingCard
 //   };
 
 //   return (
-//     <div className="flex flex-col items-center p-4 bg-[#cdffcd] min-h-screen">
+//     <div className="flex flex-col items-center p-4 mt-10 mb-10 bg-[#cdffcd] min-h-screen">
 //       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 ">
 //         {bookingOptions.map((option) => (
 //           <div
@@ -184,7 +239,7 @@ export default BookingCard
 //             >
 //               {showDetails === option.id ? 'Read Less' : 'Read More'}
 //             </button>
-//             {showDetails === option.id && ( // Ensure the button only shows when details are visible
+//             {showDetails === option.id && (
 //               <button 
 //                 className="mt-24 mb-15 py-2 px-5 bg-blue-600 text-white rounded" 
 //                 onClick={(e) => { 
@@ -202,6 +257,7 @@ export default BookingCard
 //   );
 // };
 
-// export default BookingCard;
+// export default BookingCard
+
 
 

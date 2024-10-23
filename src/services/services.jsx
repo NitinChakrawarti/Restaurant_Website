@@ -1,5 +1,7 @@
+
 import { title } from 'framer-motion/client';
 import React from 'react';
+import Testimonial from './Testimonal';
 const servicesData = [
     {
         id: 1,
@@ -55,8 +57,13 @@ const Services = () => {
                     </div>
                 ))}
             </div>
+           <div className="flex flex-col items-center p-5 min-screen"></div>
+            <Testimonial />
         </div>
     );
 };
 
 export default Services;
+           
+
+
