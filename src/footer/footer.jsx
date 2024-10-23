@@ -25,16 +25,16 @@ const Footer = () => {
                     }
 
                     .footer-text {
-                        font-size: 1.25rem; /* Increase font size */
+                        font-size: 1.25rem; 
                     }
 
                     .footer-heading {
-                        font-size: 1.5rem; /* Increase heading font size */
+                        font-size: 1.5rem; 
                     }
                 `}
             </style>
             <div className="container mx-auto px-10">
-                <div className="flex flex-wrap -mx-4">
+                <div className="flex flex-wrap justify-around items-center -mx-4">
                     <div className="w-full md:w-1/3 xl:w-1/3 p-4">
                         <p className="text-gray-600 mb-4 footer-text font-semibold">Know Us More</p>
                         <div className="flex space-x-6">
