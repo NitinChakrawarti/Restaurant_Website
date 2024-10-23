@@ -53,7 +53,7 @@ const SignUpLogin = () => {
 
         <>
             {
-                issignedin.name ? <User /> : <div className="mt-10  bg-white/50 rounded-lg px-8 pt-16 ml-[7vmax] lg:ml-[40vmax] " >
+                issignedin.name ? <User /> : <div className="max-w-md mx-auto mt-10 p-6 pb-20 bg-white rounded-lg ml-[2vmax] sm:ml-[16vmax] md:ml-[24vmax] lg:ml-[40vmax] mb-10" >
                     <h2 className="text-2xl font-bold text-center mb-6">{contextValue.user ? 'Login' : 'Sign Up'}</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-10 text-[2vmax]">

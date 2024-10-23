@@ -113,7 +113,7 @@ const sidebar = {
       ref={containerRef}
     
     >
-      <motion.div className="background fixed z-10" variants={sidebar} > 
+      <motion.div className="background fixed z-50" variants={sidebar} > 
       </motion.div>
       
       <MenuList />
