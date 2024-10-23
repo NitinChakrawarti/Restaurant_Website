@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Pepperoni Pizza",
+        "price": "₹179",
+        "image": "https://images.pexels.com/photos/1234567/pexels-photo-1234567.jpeg",
+        "category": "dinner"
+    },
+    {
+        "title": "Rasgulla",
+        "price": "₹50 OFF ABOVE ₹199",
+        "image": "https://images.pexels.com/photos/1234568/pexels-photo-1234568.jpeg",
+        "category": "lunch"
+    },
+    {
+        "title": "Paneer Thali",
+        "price": "₹85 OFF ABOVE ₹149",
+        "image": "https://images.pexels.com/photos/1234569/pexels-photo-1234569.jpeg",
+        "category": "dinner"
+    },
+    {
+        "title": "Chocolate Ice Cream",
+        "price": "₹70 OFF ABOVE ₹149",
+        "image": "https://images.pexels.com/photos/1234570/pexels-photo-1234570.jpeg",
+        "category": "dessert"
+    },
+    {
+        "title": "Biryani",
+        "price": "₹1-5 OFF ABOVE ₹179",
+        "image": "https://images.pexels.com/photos/1234571/pexels-photo-1234571.jpeg",
+        "category": "dinner"
+    },
+    {
+        "title": "Vanilla Ice Cream",
+        "price": "₹100 OFF ABOVE ₹499",
+        "image": "https://images.pexels.com/photos/1234572/pexels-photo-1234572.jpeg",
+        "category": "dessert"
+    },
+    {
+        "title": "Masala Dosa",
+        "price": "Items at ₹109",
+        "image": "https://images.pexels.com/photos/1234573/pexels-photo-1234573.jpeg",
+        "category": "breakfast"
+    },
+    {
+        "title": "Chicken Biryani",
+        "price": "₹125 OFF ABOVE ₹349",
+        "image": "https://images.pexels.com/photos/1234574/pexels-photo-1234574.jpeg",
+        "category": "lunch"
+    },
+    {
+        "title": "Big Mac",
+        "price": "₹70 OFF ABOVE ₹249",
+        "image": "https://images.pexels.com/photos/1234575/pexels-photo-1234575.jpeg",
+        "category": "lunch"
+    },
+    {
+        "title": "Chocolate Cake",
+        "price": "₹100 OFF ABOVE ₹449",
+        "image": "https://images.pexels.com/photos/1234576/pexels-photo-1234576.jpeg",
+        "category": "dessert"
+    }
+]
