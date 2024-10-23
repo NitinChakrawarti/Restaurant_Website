@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaUser, FaEnvelope, FaComments } from 'react-icons/fa'; // Import icons
+import { FaUser, FaEnvelope, FaComments } from 'react-icons/fa'; 
 import { motion } from 'framer-motion';
 
 const Feedback = () => {
@@ -7,14 +7,38 @@ const Feedback = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
+    const [error, setError] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log({ name, email, message });
-        setName('');
-        setEmail('');
-        setMessage('');
-        setFeedbackSubmitted(true);
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        // formData.append("access_key", ""); // Be cautious with sensitive data
+        formData.append("access_key", `${import.meta.env.VITE_FORMAPI}`);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                },
+                body: json
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                setName('');
+                setEmail('');
+                setMessage('');
+                setFeedbackSubmitted(true);
+            } else {
+                throw new Error(data.message || 'Submission failed');
+            }
+        } catch (error) {
+            setError(error.message);
+        }
     };
 
     return (
@@ -32,44 +56,42 @@ const Feedback = () => {
                 </motion.div>
             ) : (
                 <form onSubmit={handleSubmit}>
-                    <div className="mb-10 text-[2vmax] flex items-center  focus:outline-none">
-                        <span className="p-2 text-gray-500">
-                            <FaUser />
-                        </span>
+                    {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+                    <div className="mb-10 text-[2vmax] flex items-center focus:outline-none">
+                        <span className="p-2 text-gray-500"><FaUser /></span>
                         <input
                             type="text"
                             placeholder="Name"
+                            name='name'
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             required
-                            className="block w-full p-2 rounded-md border-b-2 focus:outline-none "
+                            className="block w-full p-2 rounded-md border-b-2 focus:outline-none"
                         />
                     </div>
-                    <div className=" mb-10 text-[2vmax] flex items-center   rounded-md">
-                        <span className="p-2 text-gray-500">
-                            <FaEnvelope />
-                        </span>
+                    <div className="mb-10 text-[2vmax] flex items-center">
+                        <span className="p-2 text-gray-500"><FaEnvelope /></span>
                         <input
                             type="email"
                             placeholder="Email"
+                            name='email'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            className=" border-b-2 mt-1 block w-full p-2 rounded-md focus:outline-none  "
+                            className="border-b-2 mt-1 block w-full p-2 rounded-md focus:outline-none"
                         />
                     </div>
-                    <div className="mb-10 text-[2vmax] flex items-center rounded-md">
-                        <span className="p-2 text-gray-500">
-                            <FaComments />
-                        </span>
-                        <input
-                            type='text'
+                    <div className="mb-10 text-[2vmax] flex items-center">
+                        <span className="p-2 text-gray-500"><FaComments /></span>
+                        <input 
+                            type="text"
                             placeholder="Your feedback"
                             value={message}
+                            name='message'
                             onChange={(e) => setMessage(e.target.value)}
                             required
                             rows="4"
-                            className="border-b-2 mt-1 block w-full p-2 rounded-md focus:outline-none  "
+                            className="border-b-2 mt-1 block w-full p-2 rounded-md focus:outline-none"
                         />
                     </div>
                     <div className="flex items-center justify-center">
@@ -82,7 +104,6 @@ const Feedback = () => {
                             Submit Feedback
                         </motion.button>
                     </div>
-
                 </form>
             )}
         </div>

@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Services from './../services/services';
 import TopDishes from './topdishes';
-import Ourmenu from './ourmenu';
+import Ourmenu from './ourmenu.jsx';
 import Bookingcard from './bookingcard';
 import logo from '../assets/logo2.png'
-import { div } from 'framer-motion/client';
+import Customer from './ourcustomers.jsx';
 const Home = () => {
   return (
     <>
@@ -17,7 +16,6 @@ const Home = () => {
           <div className="lg:flex-row flex-col gap-10 lg:gap-0  flex justify-evenly  lg:-mt-3 ">
             <div className="h-[23vmax] lg:w-[35%]">
               <div className="w-full h-full bg-black rounded-lg transform skew-y-12 bg-[url('https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-contain ">
-
               </div>
               <h1 className=" text-5xl font-bold">
                 Veg
@@ -25,7 +23,6 @@ const Home = () => {
             </div>
             <div className="h-[23vmax] lg:w-[35%]">
               <div className="w-full h-full bg-black rounded-lg transform -skew-y-12 bg-[url('https://images.pexels.com/photos/2611917/pexels-photo-2611917.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-contain ">
-
               </div>
               <h1 className="text-5xl font-bold text-end">
                 Non-Veg
@@ -40,20 +37,13 @@ const Home = () => {
           <TopDishes />
           <Ourmenu />
         </div>
-        <div className="z-30 relative  bg-black h-[50vmax] w-full  mt-16 px-4 lg:px-0 items-center justify-between">
-          <div className="max-w-[1200px] mx-auto mt-16 px-4 lg:px-0 items-center">
-            <h1 className="text-[10vmax] text-white sticky top-0 ">
-              hello this booking section
-            </h1>
-          </div>
+        <div className="z-30 relative pt-4 my-8  bg-primary/90 h-[50vmax] w-full px-4 lg:px-0 items-center justify-between">
+          <Bookingcard />
         </div>
       </div>
-
-      <div className="">
-        <Bookingcard />
-
+      <div className='relative z-30 max-w-[1200px] mx-auto my-16 px-4 lg:px-0 items-center justify-between'>
+        <Customer />
       </div>
-
     </>
   )
 }

@@ -65,7 +65,7 @@ const Ourmenu = () => {
         <>
             <div className="max-w-[1200px] mx-auto mt-16 px-4 lg:px-0 items-center justify-between">
                 <div className=" w-full items-center justify-between">
-                    <div className=" flex lg:flex-row flex-col justify-between w-full">
+                    <div className=" flex mb-8 lg:flex-row flex-col justify-between w-full">
                         <h1 className="font-bold text-[25px] inline-block"> Our Menu</h1>
                         <div className="flex flex-wrap justify-end gap-6 lg:mt-0 mt-4">
                             {
