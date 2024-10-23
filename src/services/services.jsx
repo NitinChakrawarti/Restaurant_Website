@@ -1,4 +1,3 @@
-
 import { title } from 'framer-motion/client';
 import React from 'react';
 import Testimonial from './Testimonal';
@@ -47,13 +46,15 @@ const servicesData = [
 
 const Services = () => {
     return (
-        <div className="max-w-4xl mx-auto mt-10 p-6  rounded-lg shadow-md mb-10  lg:ml-[28vmax]">
+        <div className=" max-w-4xl mx-auto mt-10 p-6  rounded-lg shadow-md mb-10  lg:ml-[28vmax]">
             <h2 className="text-3xl font-bold text-center mb-6 underline underline-offset-4 decoration-[#FF5722] ">Our Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
                 {servicesData.map((service) => (
                     <div key={service.id} className="p-4 border border-[#FF5722] rounded-lg shadow-sm hover:shadow-lg transition duration-200">
                         <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                         <p className="text-gray-700">{service.description}</p>
+                        
                     </div>
                 ))}
             </div>
