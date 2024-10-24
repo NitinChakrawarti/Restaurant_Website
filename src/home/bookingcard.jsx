@@ -58,7 +58,6 @@ const BookingCard = () => {
     const bookTable = (option) => {
         booking.setBook((prev) => [...prev, option]);
         alert('Table booked successfully!');
-        console.log(booking.book);
     };
 
     return (
