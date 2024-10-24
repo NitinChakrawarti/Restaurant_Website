@@ -4,7 +4,7 @@ Welcome to the TastyBites repository! This project aims to create an engaging pl
 
 ## Live Demo
 
-[View the live website here](https://restaurant-website-omega-seven.vercel.app/home)
+[View the live website here](https://restaurant-website-nitin04.vercel.app/home)
 
 ## Technologies Used
 
@@ -21,13 +21,13 @@ TastyBites is a team project organized by Devoic. Our team was divided into pair
 - **Sign-In Page**
 - **Home Page**
 - **Services Page**
-- **About Us Page**
+- **Feedback Page**
 - **Bookings Page**
 
 ### Team Information
 
 - **Project Name:** Restaurant Website
-- **Team Name:** TastyBites
+- **Team Name:** EasyDevs
 - **Team Members:** 
   - Nitin Chakrawarti
   - Archana Nair
@@ -37,7 +37,7 @@ TastyBites is a team project organized by Devoic. Our team was divided into pair
 - **Nitin Chakrawarti:** 
   - Sign-In Page
   - Home Page (excluding booking card)
-  - About Us Page
+  - Feedback Page
   - Bookings Page
 
 - **Archana Nair:** 
@@ -50,3 +50,10 @@ TastyBites is a team project organized by Devoic. Our team was divided into pair
 1. Clone the repository:
    ```bash
    git clone https://github.com/NitinChakrawarti/Restaurant_Website
+
+2. Open terminal:
+   ```Terminal
+   cd Restaurant_Website
+   npm install
+   npm run dev
+
