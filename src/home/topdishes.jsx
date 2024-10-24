@@ -12,7 +12,7 @@ const TopDishes = () => {
     const [categories, setCategories] = React.useState([]);
         return (
             <>
-                <div className="max-w-[1200px] mx-auto mt-16 px-4 lg:px-0 items-center justify-between">
+                <div className="max-w-[1200px] mx-auto mt-16 px-4  items-center justify-between">
                     <div className="flex w-full my-5 items-center justify-between">
                         <div className="font-bold text-[25px] ">
                             Our Top Dishes
@@ -22,7 +22,7 @@ const TopDishes = () => {
                         {
                             categories.map((category, index) => {
                                 return (
-                                    <div key={index} className="w-[150px] lg:w-[250px] shrink-0 duration-500 "
+                                    <div key={index} className="hover:scale-110 w-[150px] lg:w-[250px] shrink-0 duration-500 "
                                     >
                                         <img src={"https://swiggy-images.vercel.app/images/"+category.image} alt=""  />
                                     </div>

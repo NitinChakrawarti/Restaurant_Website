@@ -74,11 +74,12 @@
 
 import * as React from "react";
 import { useRef } from "react";
-import { motion, sync, useCycle } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 import MenuList from "./menuLIst";
 import { useDimensions } from "./usedimension";
 import NavAnimation from "./navbaranimation";
 import { FaUser } from "react-icons/fa";
+import { navopen } from "../context/signupcontext";
 const sidebar = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
@@ -91,7 +92,7 @@ const sidebar = {
   closed: {
     clipPath: "circle(80px at 10px 10px)",
     transition: {
-      delay: 0.5,
+      delay: 0.3,
       type: "spring",
       stiffness: 400,
       damping: 40
@@ -99,25 +100,25 @@ const sidebar = {
   }
 };
 
- const Navbar = () => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
+const Navbar = () => {
+  // const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
-
+  const navopencontext = React.useContext(navopen);
   return (
-    
+
     <motion.nav
       initial={false}
-      animate={isOpen ? "open" : "closed"}
+      animate={navopencontext.isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
-    
+
     >
-      <motion.div className="background fixed z-50" variants={sidebar} > 
+      <motion.div className="background fixed z-50" variants={sidebar} >
       </motion.div>
-      
+
       <MenuList />
-      <NavAnimation toggle={() => toggleOpen()} />
+      <NavAnimation toggle={() => navopencontext.toggleOpen()} />
     </motion.nav>
   );
 };

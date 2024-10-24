@@ -37,7 +37,7 @@ const Home = () => {
           <TopDishes />
           <Ourmenu />
         </div>
-        <div className="z-30 relative pt-4 my-8  bg-primary/90 h-[50vmax] w-full px-4 lg:px-0 items-center justify-between">
+        <div className="z-30 relative pt-4 my-8  bg-primary/90 w-full px-4 lg:px-0 items-center justify-between">
           <Bookingcard />
         </div>
       </div>
