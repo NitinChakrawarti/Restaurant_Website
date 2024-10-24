@@ -11,36 +11,39 @@ import Footer from './footer/footer';
 import { userName } from './context/signupcontext';
 import { navopen } from './context/signupcontext';
 import { useCycle } from 'framer-motion';
+import { booklist } from './context/signupcontext';
 function App() {
   const [user, setUser] = useState(false);
   const [name, setName] = useState(false);
   const [isOpen, toggleOpen] = useCycle(false, true);
-
+  const [book, setBook] = useState([]);
 
   return (
-    <userContext.Provider value={{ user, setUser }}>
-      <navopen.Provider value={{ isOpen, toggleOpen }}>
-        <userName.Provider value={{ name, setName }}>
-          <BrowserRouter>
-            <div className="flex gap-10">
-              <Navbar />
-              <div className='w-full bg-[#cdffcd]'>
-                <Routes>
-                  <Route path="/" element={<SignUpLogin />} />
-                  <Route path='/home' element={<Home />} />
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/booknow" element={<Booking />} />
-                  <Route path="/feedback" element={<Feedback />} />
-                </Routes>
-                <Footer />
+    <booklist.Provider value={{ book, setBook }}>
 
+      <userContext.Provider value={{ user, setUser }}>
+        <navopen.Provider value={{ isOpen, toggleOpen }}>
+          <userName.Provider value={{ name, setName }}>
+            <BrowserRouter>
+              <div className="flex gap-10">
+                <Navbar />
+                <div className='w-full bg-[#cdffcd]'>
+                  <Routes>
+                    <Route path="/" element={<SignUpLogin />} />
+                    <Route path='/home' element={<Home />} />
+                    <Route path="/services" element={<Services />} />
+                    <Route path="/booking" element={<Booking />} />
+                    <Route path="/feedback" element={<Feedback />} />
+                  </Routes>
+                  <Footer />
+                </div>
               </div>
+            </BrowserRouter>
+          </userName.Provider>
+        </navopen.Provider>
+      </userContext.Provider>
+    </booklist.Provider>
 
-            </div>
-          </BrowserRouter>
-        </userName.Provider>
-      </navopen.Provider>
-    </userContext.Provider>
   );
 }
 
