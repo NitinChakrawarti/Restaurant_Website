@@ -1,51 +1,52 @@
-# React + Vite + Tailwind CSS
-                             TastyBites
-Languages and Tools Used:
-React,Vite,Tailwind CSS
+# TastyBites - Restaurant Website
 
-live link of website - https://restaurant-website-omega-seven.vercel.app/home
+Welcome to the TastyBites repository! This project aims to create an engaging platform that reflects the restaurant's unique identity and enhances customer interactions. The website serves as a central hub for showcasing the menu, facilitating reservations, and allowing customers to share their experiences.
 
-TastyBites
-Welcome to the TastyBites Repository! This repository contains resources, documentation, and code related to the TastyBites,this project aims to develop an engaging platform that reflects the restaurant's unique identity and enhances customer interactions.The website will serve as a central hub for showcasing menu,facilating reservations,and allowing customers to share their experiences.This website will effectively showcase the restaurant's offerings while providing a seamless user expriences for reservations ,feedback,and customer engagement.
+## Live Demo
 
-About this project:
-This is a team project organized by Devoic. In this Project we were divided into team of two then we have to work on project.
+[View the live website here](https://restaurant-website-omega-seven.vercel.app/home)
 
-Pages:
-Sign-In Page
-Home Page
-Services Page
-Write about us Page
-Bookings Page 
+## Technologies Used
 
-Project Name :- Restaurant Website
-Team Name :- TastyBites
-Team members :- Nitin Chakrawarti & Archana Nair
-Team members Contribution :- 
-Sign-In Page,Home Page(except booking card),Write about us Page,Bookings Page - Nitin Chakrawarti
-Services Page , Footer, booking card section - Archana Nair 
+- **React**
+- **Vite**
+- **Tailwind CSS**
 
-Instructions for running the project:
-Clone repository by link - https://github.com/NitinChakrawarti/Restaurant_Website
-For npm install
-Npm run Dev
+## About This Project
 
+TastyBites is a team project organized by Devoic. Our team was divided into pairs to work on various components of the project, ensuring a collaborative effort to deliver a functional and visually appealing restaurant website.
 
+### Pages Included
 
+- **Sign-In Page**
+- **Home Page**
+- **Services Page**
+- **About Us Page**
+- **Bookings Page**
 
+### Team Information
 
+- **Project Name:** Restaurant Website
+- **Team Name:** TastyBites
+- **Team Members:** 
+  - Nitin Chakrawarti
+  - Archana Nair
 
+### Contributions
 
+- **Nitin Chakrawarti:** 
+  - Sign-In Page
+  - Home Page (excluding booking card)
+  - About Us Page
+  - Bookings Page
 
+- **Archana Nair:** 
+  - Services Page
+  - Footer
+  - Booking Card Section
 
+## Instructions for Running the Project
 
-
-
-
-<!-- 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh -->
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/NitinChakrawarti/Restaurant_Website
