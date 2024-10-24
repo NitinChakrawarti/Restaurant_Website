@@ -11,6 +11,8 @@ Welcome to the TastyBites repository! This project aims to create an engaging pl
 - **React**
 - **Vite**
 - **Tailwind CSS**
+- **Framer Motion**
+- **W3 Forms**
 
 ## About This Project
 
