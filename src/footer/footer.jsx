@@ -32,13 +32,13 @@ const Footer = () => {
                 <Link to="/" className="text-gray-600 hover:text-blue-600 footer-text">Home</Link>
               </li>
               <li className="mb-3">
-                <Link to="/about" className="text-gray-600 hover:text-blue-600 footer-text">Services</Link>
+                <Link to="/services" className="text-gray-600 hover:text-blue-600 footer-text">Services</Link>
               </li>
               <li className="mb-3">
-                <Link to="/delivery" className="text-gray-600 hover:text-blue-600 footer-text">Feedback</Link>
+                <Link to="/feedback" className="text-gray-600 hover:text-blue-600 footer-text">Feedback</Link>
               </li>
               <li className="mb-3">
-                <Link to="/privacy-policy" className="text-gray-600 hover:text-blue-600 footer-text">Bookings</Link>
+                <Link to="/booking" className="text-gray-600 hover:text-blue-600 footer-text">Bookings</Link>
               </li>
             </ul>
           </div>

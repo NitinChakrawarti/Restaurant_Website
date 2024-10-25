@@ -4,7 +4,7 @@ Welcome to the TastyBites repository! This project aims to create an engaging pl
 
 ## Live Demo
 
-[View the live website here](https://restaurant-website-nitin04.vercel.app/home)
+[View the live website here](https://easydev-resto.vercel.app/)
 
 ## Technologies Used
 
