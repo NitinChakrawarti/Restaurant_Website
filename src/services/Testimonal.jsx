@@ -70,7 +70,7 @@ const Testimonial = () => {
                         <div
                             key={testimonial.id}
                             className="flex-shrink-0 w-full"
-                            onClick={() => handleCardClick(testimonial.id)} // Make the card clickable
+                            onClick={() => handleCardClick(testimonial.id)} 
                         >
                             <div className="bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-200 hover:scale-105 cursor-pointer">
                                 <div className="flex items-center mb-4">
