@@ -29,8 +29,8 @@ const Home = () => {
               </h1>
             </div>
           </div>
-          <h1 className="relative text-center mt-28 bg-[#a5e8aa] py-1 text-3xl font-medium ">
-            We have Seperate Veg and Non-Veg Kitchen
+          <h1 className="relative text-center mt-28 bg-[#a5e8aa] py-1 text-3xl font-medium text-shadow fade-in background-animation ">
+          Choose your Cuisine, Choose your Kitchen.
           </h1>
         </div>
         <div className="z-30 relative   pt-4  bg-white -px-8">
