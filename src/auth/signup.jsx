@@ -37,7 +37,7 @@ const SignUpLogin = () => {
            
             localStorage.setItem('username', username);
             localStorage.setItem('password', password);
-            localStorage.setItem('cardValue', '0');
+            localStorage.setItem('cardValue', 0);
             localStorage.setItem('location', location);
 
             setUsername('');

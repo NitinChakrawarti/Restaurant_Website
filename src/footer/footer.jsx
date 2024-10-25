@@ -8,7 +8,7 @@ const Footer = () => {
 
       <div className=" mx-auto px-10">
         <div className="flex flex-wrap justify-between">
-          <div className="w-full md:w-1/3 p-4">
+          <div className="w-full md:w-1/3 p-4 -mt-6">
             <img className="h-32" src={logo} />
             <h1 className="text-xl relative -translate-y-10 ml-5 ">TastyBites</h1>
             <h2 className="footer-heading font-bold text-gray-600 mb-4">Know Us More</h2>
@@ -25,7 +25,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Company Links */}
           <div className="w-full md:w-1/3 p-4">
             <h2 className="footer-heading font-bold text-gray-600 mb-4">COMPANY</h2>
             <ul className="list-none relative -top-8 -left-4 ">
@@ -33,13 +32,13 @@ const Footer = () => {
                 <Link to="/" className="text-gray-600 hover:text-blue-600 footer-text">Home</Link>
               </li>
               <li className="mb-3">
-                <Link to="/about" className="text-gray-600 hover:text-blue-600 footer-text">About Us</Link>
+                <Link to="/services" className="text-gray-600 hover:text-blue-600 footer-text">Services</Link>
               </li>
               <li className="mb-3">
-                <Link to="/delivery" className="text-gray-600 hover:text-blue-600 footer-text">Delivery</Link>
+                <Link to="/feedback" className="text-gray-600 hover:text-blue-600 footer-text">Feedback</Link>
               </li>
               <li className="mb-3">
-                <Link to="/privacy-policy" className="text-gray-600 hover:text-blue-600 footer-text">Privacy Policy</Link>
+                <Link to="/booking" className="text-gray-600 hover:text-blue-600 footer-text">Bookings</Link>
               </li>
             </ul>
           </div>

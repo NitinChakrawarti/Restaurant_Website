@@ -29,8 +29,8 @@ function App() {
                 <Navbar />
                 <div className='w-full bg-[#cdffcd]'>
                   <Routes>
-                    <Route path="/" element={<SignUpLogin />} />
-                    <Route path='/home' element={<Home />} />
+                    <Route path="/user" element={<SignUpLogin />} />
+                    <Route path='/' element={<Home />} />
                     <Route path="/services" element={<Services />} />
                     <Route path="/booking" element={<Booking />} />
                     <Route path="/feedback" element={<Feedback />} />

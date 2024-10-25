@@ -72,7 +72,7 @@ const Testimonial = () => {
                             className="flex-shrink-0 w-full"
                             onClick={() => handleCardClick(testimonial.id)} 
                         >
-                            <div className="bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-200 hover:scale-105 cursor-pointer">
+                            <div className="bg-white rounded-lg p-6 shadow-lg transform transition-transform duration-200 hover:scale-[1.02] cursor-pointer">
                                 <div className="flex items-center mb-4">
                                     <img className="w-16 h-16 rounded-full mr-4" src={testimonial.image} alt={testimonial.name} />
                                     <div>

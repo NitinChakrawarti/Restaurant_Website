@@ -3,6 +3,7 @@ import { FaUtensils, FaUser, FaCoffee, FaCocktail, FaBirthdayCake, FaWineGlass }
 import { booklist } from '../context/signupcontext';
 import { use } from 'framer-motion/client';
 import { useContext } from 'react';
+import { motion } from 'framer-motion';
 const bookingOptions = [
     {
         id: 1,
@@ -51,6 +52,8 @@ const bookingOptions = [
 const BookingCard = () => {
     const [showDetails, setShowDetails] = useState(null);
     const booking = useContext(booklist);
+    const bookvalue = localStorage.getItem("cardValue");
+
     const handleCardClick = (id) => {
         setShowDetails(showDetails === id ? null : id);
     };
@@ -65,38 +68,52 @@ const BookingCard = () => {
             <div className="flex w-full my-8 items-center justify-between">
                 <div className="font-bold text-[25px]">Booking Options</div>
             </div>
-            
+
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-                {bookingOptions.map((option) => (
-                    <div
-                        key={option.id}
-                        className="flex flex-col pt-16 h-[30vmax] mg:h-[25vmax] lg:h-[20vmax] px-4 pb-10 mb-4 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-[#cdffcd] transition duration-300 ease-in-out transform shadow-lg justify-between"
-                        onClick={() => handleCardClick(option.id)}
+                {bookingOptions.map((option, index) => (
+                    <motion.div
+                        className="box"
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                            duration: 0.8,
+                            delay: 0.5,
+                            ease: [0, 0.71, 0.2, 1.01]
+                        }}
+                        key={index}
                     >
-                        <div className="flex flex-col h-[10vmax] items-center mb-4">
-                            <div className="text-5xl mb-2">{option.icon}</div>
-                            <h2 className="text-2xl font-bold mb-1">{option.title}</h2>
-                            <p className="text-gray-600">Max {option.maxGuests} guests</p>
-                            <p>{option.description}</p>
+                        <div
+                            key={option.id}
+                            className="flex flex-col pt-16 h-[35vmax] md:h-[35vmax] lg:h-[20vmax] px-4 pb-10 mb-4 bg-white border border-gray-300 rounded-lg cursor-pointer hover:bg-[#cdffcd] hover:scale-105 transition duration-300 ease-in-out transform shadow-lg justify-between"
+                            onClick={() => handleCardClick(option.id)}
+                        >
+                            <div className="flex flex-col h-[10vmax] items-center mb-4">
+                                <div className="text-5xl mb-2">{option.icon}</div>
+                                <h2 className="text-2xl font-bold mb-1">{option.title}</h2>
+                                <p className="text-gray-600">Max {option.maxGuests} guests</p>
+                                <p>{option.description}</p>
 
+                            </div>
+
+                            <div className="flex items-center justify-center w-full">
+                                <button
+                                    className="py-2 px-6 bg-green-600 text-white rounded hover:bg-green-600/90 hover:text-black transition duration-300"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        bookTable(option);
+                                        
+                                        localStorage.setItem('cardValue', `${bookvalue + 1}`);
+                                    }}
+                                >
+                                    Book a Table
+                                </button>
+                            </div>
                         </div>
+                    </motion.div>
 
-                        <div className="flex items-center justify-center w-full">
-                            <button
-                                className="py-2 px-6 bg-green-600 text-white rounded hover:bg-green-600/90 hover:text-black transition duration-300"
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    bookTable(option);
-
-                                }}
-                            >
-                                Book a Table
-                            </button>
-                        </div>
-                    </div>
                 ))}
             </div>
-           
+
         </div>
     );
 };

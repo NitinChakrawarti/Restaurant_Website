@@ -14,7 +14,7 @@ nav {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 300px;
+    /* width: 300px; */
   }
   
   .background {
@@ -24,7 +24,25 @@ nav {
     bottom: 0;
     width: 300px;
     background: #fffffff0;
-    ;
+  }
+
+  @media screen and (max-width: 640px) {
+    .background {
+      /* position: absolute; */
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 200px;
+      background: #fffffff0;
+    }
+    ul {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      width: 250px;
+      position: fixed;
+      top: 100px;
+      display: none;
+    }
   }
   
   button {
@@ -41,17 +59,19 @@ nav {
   #buttonnav {
    padding: 30px;
   }
-  
+
   ul,
   li {
     margin: 0;
     padding: 0;
+    display: contents;
   }
   
   ul {
     padding: 25px;
     position: fixed;
     top: 100px;
+    display: block;
   }
   
   li {
