@@ -7,6 +7,7 @@ const Booking = () => {
   const delebook = (id) => {
     return () => {
       booking.setBook((prev) => prev.filter((option) => option.id !== id));
+      localStorage.setItem('cardValue', booking.book.length - 1);
     };
   };
 
@@ -30,7 +31,7 @@ const Booking = () => {
               </div>
               <span
                 className='cursor-pointer bg-red-600 w-fit px-2 py-1 rounded-md mt-4 text-white'
-                onClick={delebook(option.id)} // Correctly using the function reference
+                onClick={delebook(option.id)} 
               >
                 Cancel
               </span>

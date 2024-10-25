@@ -80,6 +80,7 @@ import { useDimensions } from "./usedimension";
 import NavAnimation from "./navbaranimation";
 import { FaUser } from "react-icons/fa";
 import { navopen } from "../context/signupcontext";
+import { div } from "framer-motion/client";
 const sidebar = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
@@ -107,19 +108,20 @@ const Navbar = () => {
   const navopencontext = React.useContext(navopen);
   return (
 
-    <motion.nav
-      initial={false}
-      animate={navopencontext.isOpen ? "open" : "closed"}
-      custom={height}
-      ref={containerRef}
+    // <div className="md:fixed hidden">
+      <motion.nav
+        initial={false}
+        animate={navopencontext.isOpen ? "open" : "closed"}
+        custom={height}
+        ref={containerRef}
+      >
+        <motion.div className="background fixed  z-50" variants={sidebar} >
+        </motion.div>
 
-    >
-      <motion.div className="background fixed z-50" variants={sidebar} >
-      </motion.div>
-
-      <MenuList />
-      <NavAnimation toggle={() => navopencontext.toggleOpen()} />
-    </motion.nav>
+        <MenuList />
+        <NavAnimation toggle={() => navopencontext.toggleOpen()} />
+      </motion.nav>
+    // </div>
   );
 };
 

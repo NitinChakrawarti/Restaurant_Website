@@ -7,6 +7,7 @@ const User = () => {
         localStorage.removeItem('islogin');
         localStorage.removeItem('username');
         localStorage.removeItem('location');
+        localStorage.removeItem('cardValue')
         window.location.reload();
     }
 

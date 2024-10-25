@@ -9,7 +9,8 @@ import { MdBorderColor } from "react-icons/md";
 import { MdOutlineFoodBank } from "react-icons/md";
 import { path } from "framer-motion/client";
 import { userName } from '../context/signupcontext';
-
+import { navopen } from "../context/signupcontext";
+import { parse } from "dotenv";
 const variants = {
   open: {
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
@@ -24,6 +25,7 @@ const MenuList = () => {
   const [bookvalue, setBookvalue] = useState(0);
   const [usernameLS, setUsernameLS] = useState("Sign in");
   const issignedin = useContext(userName);
+  const navopencontext = React.useContext(navopen);
 
   useEffect(() => {
     const bookvalue = localStorage.getItem("cardValue");
@@ -34,16 +36,15 @@ const MenuList = () => {
     setBookvalue(bookvalue);
   }, [issignedin.name]);
   const itemIds = [
-    { path: "/", icon: <FaUser />, name: usernameLS },
-    { name: "Home", path: "/home", icon: <MdOutlineFoodBank /> },
+    { path: "/user", icon: <FaUser />, name: usernameLS },
+    { name: "Home", path: "/", icon: <MdOutlineFoodBank /> },
     { name: "Services", path: "/services", icon: <MdDinnerDining /> },
     { name: "Write about us", path: "/feedback", icon: <MdFeedback /> },
     { name: "Bookings", path: "/booking", icon: <MdBorderColor />, bookvalue: bookvalue }
   ];
 
   return (
-    <motion.ul variants={variants} className="z-50">
-
+    <motion.ul variants={variants} className={`${navopencontext.isOpen ? "block" : "hidden"} z-50`}>
       {itemIds.map((item, index) => (
         <MenuItem item={item} key={index} />
       ))}
